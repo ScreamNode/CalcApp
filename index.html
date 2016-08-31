@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CalcApplication">
+<head>
+    <meta charset="UTF-8">
+    <title>Axxon cameras</title>
+</head>
+
+<!--styles-->
+<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="./scss/mainPage.css">
+
+<!--load main libraries-->
+<script src="./bower_components/angular/angular.min.js"></script>
+<script src="./bower_components/angular-route/angular-route.min.js"></script>
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!--routes-->
+<script src="js/routesConfig/routes.js"></script>
+
+<!--controllers-->
+<script src="js/controllers/navCtrl.js"></script>
+<script src="js/controllers/watchCtrl.js"></script>
+
+<!--services-->
+
+<body>
+<!-- Fixed navbar -->
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="navCtrl as nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Calculator</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active:nav.tab === 'home'}" ng-click="nav.setTab('home')"><a href="#/home">Home</a></li>
+                    <li ng-class="{active:nav.tab === 'watch'}" ng-click="nav.setTab('watch')" class=""><a href="#/watch">Watch calculator</a></li>
+                    <li ng-class="{active:nav.tab === 'about'}" ng-click="nav.setTab('about')" class=""><a href="#/about">About us</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
+
+    <div class="_margin container">
+
+
+
+
+
+        <ng-view></ng-view>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<div>
+    <div class=" col-xs-12">
+        <h2 class="header">Add product in this forms:</h2>
+    </div>
+
+    <div class="col-xs-6 col-xs-offset-3">
+        <div class="col-xs-6 input__name">
+            <p>Название продукта</p>
+        </div>
+        <div class="col-xs-2 input__name">
+            <p>Цена</p>
+        </div>
+        <div class="col-xs-6 input--form">
+            <input ng-model="newProduct.name" type="text">
+        </div>
+        <div class="col-xs-2 input--form">
+            <input ng-model="newProduct.price" type="number">
+        </div>
+        <div class="col-xs-4">
+            <button ng-click="addNewProduct()" class="btn btn-primary">Добавить</button>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th class="col-xs-5">Продукт</th>
+                        <th class="col-xs-2">Цена</th>
+                        <th class="col-xs-5">Цена с кастомной скидкой</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="product in products">
+                        <td>{{product.name}}</td>
+                        <td>{{product.price | number:0}}</td>
+                        <td>{{product.discountPrice | number:0}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class=" col-xs-12">
+                <h4 class="header">По желанию добавьте кастомную скидку:</h4>
+            </div>
+
+
+            <div class="col-xs-6 input--form">
+                <p>Кастомная скидка(в рублях)</p>
+            </div>
+            <div class="col-xs-2 input--form">
+                <input ng-model="discount" type="text">
+            </div>
+            <div class="col-xs-4">
+                <button ng-click="discountSummaryPrice()" class="btn btn-primary">Применить</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
